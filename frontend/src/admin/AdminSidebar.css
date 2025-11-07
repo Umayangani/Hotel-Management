@@ -1,0 +1,138 @@
+.admin-sidebar {
+  width: 280px;
+  min-width: 250px;
+  height: 100vh;
+  background: linear-gradient(180deg,#0f1724 0%, #132033 100%);
+  color: #e6eef8;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.admin-sidebar__brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px 8px;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.admin-sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  flex: 1 1 auto;
+}
+
+.admin-sidebar__item {
+  margin: 4px 0;
+}
+
+.admin-sidebar__link {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 0.98rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-sidebar__link .link-text {
+  flex: 1;
+}
+
+.admin-sidebar__link .submenu-arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.admin-sidebar__link .submenu-arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.admin-sidebar__item.active > .admin-sidebar__link,
+.admin-sidebar__link:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.admin-sidebar__submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 16px;
+  margin-top: 2px;
+}
+
+.admin-sidebar__submenu li {
+  margin: 2px 0;
+}
+
+.admin-sidebar__sublink {
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 0.92rem;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.admin-sidebar__submenu li.active .admin-sidebar__sublink,
+.admin-sidebar__sublink:hover {
+  background: rgba(255,255,255,0.04);
+  opacity: 1;
+}
+
+.admin-sidebar__footer {
+  padding: 8px 4px;
+  text-align: center;
+  color: rgba(230,238,248,0.7);
+  font-size: 0.8rem;
+}
+
+/* Responsive: collapse to top bar on small screens (optional) */
+@media (max-width: 720px) {
+  .admin-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+  }
+  .admin-sidebar__list {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    flex: 1 1 auto;
+  }
+  .admin-sidebar__item {
+    margin: 0;
+  }
+  .admin-sidebar__link {
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+  .admin-sidebar__submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #132033;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .admin-sidebar__brand { display:none }
+}
